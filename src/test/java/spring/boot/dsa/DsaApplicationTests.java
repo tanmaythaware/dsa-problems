@@ -40,4 +40,10 @@ class DsaApplicationTests {
 				() -> assertEquals("",stringAndArray.firstPalindrome(new String[]{"def","ghi"})));
 	}
 
+	@Test
+	void countSeniorsTest(){
+		StringAndArray stringAndArray = new StringAndArray();
+		assertAll("countSeniors",
+				() -> assertEquals(2,stringAndArray.countSeniors(new String[]{"7868190130M7522","5303914400F9211","9273338290F4010"})));
+	}
 }
