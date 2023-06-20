@@ -27,4 +27,26 @@ public class StringAndArray {
         }
         return count;
     }
+
+    public String firstPalindrome(String[] words) {
+        for(String word : words){
+            int i;
+            int j = word.length()-1;
+            boolean isPalindrome = true;
+            if(word.length()==1){
+                return word;
+            }
+            for(i=0;i<(word.length()/2);i++){
+                if(word.charAt(i)!=word.charAt(j)){
+                    isPalindrome = false;
+                    break;
+                }
+                j--;
+            }
+            if(isPalindrome){
+                return word;
+            }
+        }
+        return "";
+    }
 }
