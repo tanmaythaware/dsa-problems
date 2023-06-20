@@ -1,6 +1,8 @@
 package spring.boot.dsa.service;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.stream.IntStream;
 
 public class StringAndArray {
 
@@ -58,5 +60,19 @@ public class StringAndArray {
             }
         }
         return count;
+    }
+
+    public int[] minOperations(String boxes) {
+        int [] res = new int[boxes.length()];
+        for(int i = 0;i<boxes.length();i++){
+            int count = 0;
+            for(int j = 0;j<boxes.length();j++){
+                if(i!=j && boxes.charAt(j)=='1'){
+                    count = count + (Math.max(j,i) - Math.min(j,i));
+                }
+                res[i] = count;
+            }
+        }
+        return res;
     }
 }

@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import spring.boot.dsa.service.StringAndArray;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -45,5 +47,12 @@ class DsaApplicationTests {
 		StringAndArray stringAndArray = new StringAndArray();
 		assertAll("countSeniors",
 				() -> assertEquals(2,stringAndArray.countSeniors(new String[]{"7868190130M7522","5303914400F9211","9273338290F4010"})));
+	}
+
+	@Test
+	void minOperations(){
+		StringAndArray stringAndArray = new StringAndArray();
+		int[] ans = new int[]{1,1,3};
+		assertEquals(true, Arrays.equals(ans,stringAndArray.minOperations("110")));
 	}
 }
