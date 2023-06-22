@@ -1,7 +1,6 @@
 package spring.boot.dsa.service;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class StringAndArray {
@@ -74,5 +73,30 @@ public class StringAndArray {
             }
         }
         return res;
+    }
+
+    public List<String> findAndReplacePattern(String[] words, String pattern) {
+        List<Integer> patternIntList = getIntList(pattern);
+        List<String> res = new ArrayList<>();
+        for (String word:words){
+            if(patternIntList.equals(getIntList(word))){
+                res.add(word);
+            }
+        }
+        return res;
+    }
+
+    public List<Integer> getIntList(String s){
+        List<Integer> intL = new ArrayList<>();
+        int idx = 0;
+        for(char c : s.toCharArray()){
+            if(!intL.contains(s.indexOf(c))){
+                intL.add(idx);
+                idx++;
+            } else{
+                intL.add(s.indexOf(c));
+            }
+        }
+        return intL;
     }
 }

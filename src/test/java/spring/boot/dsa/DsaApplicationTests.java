@@ -4,7 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import spring.boot.dsa.service.StringAndArray;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -54,5 +56,16 @@ class DsaApplicationTests {
 		StringAndArray stringAndArray = new StringAndArray();
 		int[] ans = new int[]{1,1,3};
 		assertEquals(true, Arrays.equals(ans,stringAndArray.minOperations("110")));
+	}
+
+	@Test
+	void findAndReplacePatternTest(){
+		StringAndArray stringAndArray = new StringAndArray();
+		List<String> list = new ArrayList<>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+
+		assertEquals(true, list.equals(stringAndArray.findAndReplacePattern(new String[]{"a","b","c"},"a")));
 	}
 }
