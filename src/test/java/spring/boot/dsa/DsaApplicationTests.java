@@ -68,4 +68,10 @@ class DsaApplicationTests {
 
 		assertEquals(true, list.equals(stringAndArray.findAndReplacePattern(new String[]{"a","b","c"},"a")));
 	}
+
+	@Test
+	void numOfPairsTest(){
+		StringAndArray stringAndArray = new StringAndArray();
+		assertEquals(2,stringAndArray.numOfPairs(new String[]{"123","4","12","34"},"1234"));
+	}
 }
