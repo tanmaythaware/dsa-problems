@@ -111,4 +111,21 @@ public class StringAndArray {
         }
         return count;
     }
+
+    public int getSecondHighestElement(int[] nums) {
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        int idx = -1;
+        ArrayList<Integer> al = new ArrayList<>();
+        for(int i = 0;i<nums.length-1;i++){
+            al.add(nums[i]);
+            if(nums[i]>largest){
+                secondLargest = largest;
+                largest = nums[i];
+                idx = al.indexOf(secondLargest);
+            }
+        }
+        return idx;
+
+    }
 }

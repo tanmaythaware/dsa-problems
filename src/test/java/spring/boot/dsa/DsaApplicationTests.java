@@ -74,4 +74,10 @@ class DsaApplicationTests {
 		StringAndArray stringAndArray = new StringAndArray();
 		assertEquals(2,stringAndArray.numOfPairs(new String[]{"123","4","12","34"},"1234"));
 	}
+
+	@Test
+	void getSecondHighestElementTest(){
+		StringAndArray stringAndArray = new StringAndArray();
+		assertEquals(-1,stringAndArray.getSecondHighestElement(new int[]{5,5,5,5,5}));
+	}
 }
