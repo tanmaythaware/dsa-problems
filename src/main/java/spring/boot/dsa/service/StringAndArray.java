@@ -128,4 +128,45 @@ public class StringAndArray {
         return idx;
 
     }
+
+    public int[] moveZeroes(int[] nums , int n) {
+        int j = 0;
+        for(int i = 0; i<n; i++){
+            if(nums[i]!=0){
+                nums[j]=nums[i];
+                if(i!=j){
+                    nums[i] = 0;
+                }
+                j++;
+            }
+        }
+        return nums;
+    }
+
+    public void splitWordsBySeparator() {
+        List<String> words = new ArrayList<>();
+        words.add("$easy$");
+        words.add("$problem$");
+//        words.add("six");
+        char separator = '$';
+        List<String> res = new ArrayList<>();
+        for(String word:words){
+            int startIdx = 0;
+            for(int i = 0;i<word.length();i++){
+                if(word.charAt(i)==separator){
+                    if(!word.substring(startIdx,i).isEmpty()){
+                        res.add(word.substring(startIdx,i));
+                    }
+                    startIdx = i+1;
+                }
+                if(i==word.length()-1){
+                    if(!word.substring(startIdx,i+1).isEmpty()){
+                        res.add(word.substring(startIdx,i+1));
+                    }
+
+                }
+            }
+        }
+        System.out.println(res);
+    }
 }

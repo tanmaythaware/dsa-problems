@@ -80,4 +80,17 @@ class DsaApplicationTests {
 		StringAndArray stringAndArray = new StringAndArray();
 		assertEquals(-1,stringAndArray.getSecondHighestElement(new int[]{5,5,5,5,5}));
 	}
+
+	@Test
+	void moveZeroesTest(){
+		StringAndArray stringAndArray = new StringAndArray();
+//		int[] ans = ;
+		assertEquals(new int[]{10, 2, 12, 13, 0, 0},stringAndArray.moveZeroes(new int[]{10,0,2,12,0,13},6));
+	}
+
+	@Test
+	void splitWordsBySeparatorTest(){
+		StringAndArray stringAndArray = new StringAndArray();
+		stringAndArray.splitWordsBySeparator();
+	}
 }
